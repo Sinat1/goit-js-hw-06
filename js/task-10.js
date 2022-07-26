@@ -15,9 +15,9 @@ refs.createBtn.addEventListener("click", () => {
   createBoxes(refs.numInput.value);
 });
 
-function createBoxes(amount) {
-  let size = 30;
+let size = 30;
 
+function createBoxes(amount) {
   for (let i = 0; i < amount; i += 1) {
     const divEL = document.createElement("div");
     divEL.style.width = `${size}px`;
@@ -28,11 +28,10 @@ function createBoxes(amount) {
   }
 }
 
-refs.destroyBtn.addEventListener("click", () => {
-  destroyBoxes(refs.numInput.value);
-});
+refs.destroyBtn.addEventListener("click", destroyBoxes);
 
 function destroyBoxes() {
   refs.boxesDiv.innerHTML = "";
   refs.numInput.value = "";
+  size = 30;
 }
